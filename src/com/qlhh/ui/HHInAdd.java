@@ -11,14 +11,15 @@ import com.qlhh.entity.HangThucPham;
 public class HHInAdd {
 	private PrintWriter out;
 	private Scanner in;
-
+	//private HHOutAdd hhOutAdd;
 	public HHInAdd() {
 
 	}
 
-	public HHInAdd(PrintWriter out, Scanner in) {
+	public HHInAdd(PrintWriter out, Scanner in/*HHOutAdd hhOutAdd*/) {
 		this.out = out;
 		this.in = in;
+		//this.hhOutAdd = hhOutAdd;
 	}
 
 	public HangHoa input() {
@@ -35,13 +36,14 @@ public class HHInAdd {
 		out.print("[Ten Hang]: ");
 		out.flush();
 		tenHang = in.nextLine();
+		in.nextLine();
 		out.print("[So Luong]: ");
 		out.flush();
 		soLuong = in.nextInt();
 		out.print("[Don Gia]: ");
 		out.flush();
 		donGia = in.nextFloat();
-
+		in.nextLine();
 		out.print("[MAT HANG \"THUCPHAM\" / \"DIENMAY\" / \"SANHSU\" ]:");
 		out.flush();
 
@@ -77,7 +79,7 @@ public class HHInAdd {
 		nhaCungCap = in.nextLine();
 
 		HangThucPham hTP = new HangThucPham(maHang, tenHang, soLuong, donGia, ngaySanXuat, ngayHetHan, nhaCungCap);
-
+		//hhOutAdd.showMessage(hTP);
 		return hTP;
 	}
 
@@ -93,7 +95,7 @@ public class HHInAdd {
 		congSuat = in.nextInt();
 
 		HangDienMay hDM = new HangDienMay(maHang, tenHang, soLuong, donGia, thoiGianBH, congSuat);
-
+		//hhOutAdd.showMessage(hDM);
 		return hDM;
 	}
 
@@ -109,7 +111,7 @@ public class HHInAdd {
 		ngayNhapKho = in.nextInt();
 
 		HangSanhSu hSS = new HangSanhSu(maHang, tenHang, soLuong, donGia, nhaSanXuat, ngayNhapKho);
-
+		//hhOutAdd.showMessage(hSS);
 		return hSS;
 	}
 

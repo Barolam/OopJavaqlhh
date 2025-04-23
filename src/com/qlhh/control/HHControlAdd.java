@@ -7,13 +7,16 @@ import com.qlhh.ui.HHOutAdd;
 
 public class HHControlAdd {
 	HHAddDAO hhAddDAO;
-	HHInAdd hhInAdd;
 	HHOutAdd hhOutAdd;
+	HHInAdd hhInAdd;
 	
-	public HHControlAdd(HHAddDAO hhAddDAO, HHInAdd hhInAdd, HHOutAdd hhOutAdd) {
+	
+	
+	public HHControlAdd(HHAddDAO hhAddDAO, HHOutAdd hhOutAdd, HHInAdd hhInAdd) {
 		this.hhAddDAO = hhAddDAO;
-		this.hhInAdd = hhInAdd;
 		this.hhOutAdd = hhOutAdd;
+		this.hhInAdd = hhInAdd;
+		
 	}
 	
 	public void add() {
@@ -23,3 +26,6 @@ public class HHControlAdd {
 		hhOutAdd.showMessage(hh);
 	}
 }
+
+
+

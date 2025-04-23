@@ -4,7 +4,6 @@ public class HangThucPham extends HangHoa{
 	private int ngaySanXuat;
 	private int ngayHetHan;
 	private String nhaCungCap;
-	private HangHoa hangHoa;
 	public HangThucPham() {
 		
 	}
@@ -18,8 +17,6 @@ public class HangThucPham extends HangHoa{
 	
 	@Override
 	public double tinhVAT() {
-		double VAT = 0;
-		VAT = hangHoa.getdonGia()*0.05;
-		return VAT;
+		return getdonGia()*0.05;
 	}
 }

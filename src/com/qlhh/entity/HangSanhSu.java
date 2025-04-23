@@ -3,7 +3,6 @@ package com.qlhh.entity;
 public class HangSanhSu extends HangHoa{
 	private String nhaSanXuat;
 	private int ngayNhapKho;
-	private HangHoa hangHoa;
 	public HangSanhSu() {
 		
 	}
@@ -16,8 +15,6 @@ public class HangSanhSu extends HangHoa{
 	
 	@Override
 	public double tinhVAT() {
-		double VAT = 0;
-		VAT = hangHoa.getdonGia()*0.1;
-		return VAT;
+		return getdonGia()*0.1;
 	}
 }
