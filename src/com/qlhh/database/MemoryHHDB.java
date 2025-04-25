@@ -13,25 +13,22 @@ public class MemoryHHDB {
 	static {
  		dbHH = new ArrayList<HangHoa>();
  		//tạo dữ liệu sẵn có cho DB
- 		HangThucPham hTP1 = new HangThucPham(111,"sua", 5, 7000, 2, 9, "Vinamilk");
- 		HangThucPham hTP2 = new HangThucPham(222, "Snack", 6, 21000, 3, 15, "OiShi");
- 		HangDienMay hDM1 = new HangDienMay(333, "tu lanh", 3, 100000, 6, 1500);
- 		HangDienMay hDM2 = new HangDienMay(444, "ti vi", 4, 50000, 3, 1000);
- 		HangSanhSu hSS1 = new HangSanhSu(555,"Ly", 10, 3000, "Cong Ty", 20);
- 		HangSanhSu hSS2 = new HangSanhSu(666,"chen", 10, 4000, "Cong Ty", 18);
-// 		 svPM1 = new SinhVienPM(111, "Le Van Teo", 
-// 				"PM", null, 4, 4, 4);
-// 		SinhVienPM svPM2 = new SinhVienPM(222, "Le Van Tu", 
-// 				"PM", null, 9, 9, 1);
-// 		SinhVienKT svKT1 = new SinhVienKT(333, "Nguyen Thi Meo", 
-// 				"KT", null, 7, 8);
-// 		SinhVienKT svKT2 = new SinhVienKT(444, "Nguyen Thi Suu", 
-// 				"KT", null, 2, 2);
-// 		dbSV.add(svPM1);
-// 		dbSV.add(svPM2);
-// 		dbSV.add(svKT1);
-// 		dbSV.add(svKT2);
- 
+ 		 // Dữ liệu hiện có
+        HangDienMay hDM = new HangDienMay(1, "tủ lạnh", 10, 5000000, 12, 300);
+        HangSanhSu hSS = new HangSanhSu(2, "ly", 50, 20000, "Nhà sản xuất A", 20230101);
+        HangThucPham hTP = new HangThucPham(3, "sữa", 100, 25000, 20230101, 20230131, "Vinamilk");
+        HangDienMay hDM2 = new HangDienMay(4, "máy giặt", 5, 8000000, 24, 500);
+        HangSanhSu hSS2 = new HangSanhSu(5, "bát", 30, 15000, "Nhà sản xuất B", 20230215);
+        HangThucPham hTP2 = new HangThucPham(6, "gạo", 200, 18000, 20230301, 20240301, "Công ty Gạo Việt");
+
+        // Thêm vào danh sách
+        dbHH.add(hDM);
+        dbHH.add(hSS);
+        dbHH.add(hTP);
+        dbHH.add(hDM2);
+        dbHH.add(hSS2);
+        dbHH.add(hTP2);
+  
  
  	}
 	

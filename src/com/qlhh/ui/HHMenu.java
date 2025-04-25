@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.qlhh.control.HHControlAdd;
 import com.qlhh.control.HHControlPrint;
+import com.qlhh.control.HHControlSum;
 import com.qlhh.database.MemoryHHDB;
 
 
@@ -16,11 +17,15 @@ public class HHMenu {
 	private HHInAdd hhInAdd;// buoc 1
 	private HHControlPrint hhControlPrint;
 	private HHControlAdd hhControlAdd;
+	private HHControlSum hhControlSum;
 
 	public void setHHControlPrint(HHControlPrint hhControlPrint) {
  		this.hhControlPrint = hhControlPrint;
  	}
 	
+	public void setHHControlQuantity(HHControlSum hhControlSum) {
+        this.hhControlSum = hhControlSum;
+    }
 	
 	HHMenu() {
 
@@ -67,7 +72,16 @@ public class HHMenu {
 				print();
 				continue;
 			}
+			if ("sum".equalsIgnoreCase(command)) {
+                sum();
+                continue;
+            }
 		}
+	}
+
+	private void sum() {
+		hhControlSum.xuLiThongTin();
+		
 	}
 
 	private void print() {

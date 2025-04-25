@@ -17,6 +17,6 @@ public class HangThucPham extends HangHoa{
 	
 	@Override
 	public double tinhVAT() {
-		return getdonGia()*0.05;
+		return getdonGia()*getsoLuong()*0.05;
 	}
 }
