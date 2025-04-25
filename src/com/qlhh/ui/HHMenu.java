@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.qlhh.control.HHControlAdd;
+import com.qlhh.control.HHControlAverage;
 import com.qlhh.control.HHControlPrint;
 import com.qlhh.control.HHControlSum;
 import com.qlhh.database.MemoryHHDB;
@@ -18,6 +19,7 @@ public class HHMenu {
 	private HHControlPrint hhControlPrint;
 	private HHControlAdd hhControlAdd;
 	private HHControlSum hhControlSum;
+	private HHControlAverage hhControlAverage;
 
 	public void setHHControlPrint(HHControlPrint hhControlPrint) {
  		this.hhControlPrint = hhControlPrint;
@@ -37,11 +39,18 @@ public class HHMenu {
  		this.prompt = prompt;
  	}
 	
-	public HHMenu(PrintWriter out, Scanner in, String prompt, 
- 			HHControlAdd hhControlAdd) {
- 		this(out, in, prompt);
- 		this.hhControlAdd = hhControlAdd;
- 	}
+	
+
+	public HHMenu(Scanner in, PrintWriter out, String prompt, HHInAdd hhInAdd, HHControlPrint hhControlPrint,
+			HHControlAdd hhControlAdd, HHControlSum hhControlSum, HHControlAverage hhControlAverage) {
+		
+	 	this(out, in, prompt);
+		this.hhInAdd = hhInAdd;
+		this.hhControlPrint = hhControlPrint;
+		this.hhControlAdd = hhControlAdd;
+		this.hhControlSum = hhControlSum;
+		this.hhControlAverage = hhControlAverage;
+	}
 
 	public void controlLoop() {
 		out.println("go lenh \"help\" de duoc ho tro!!!");
@@ -76,7 +85,16 @@ public class HHMenu {
                 sum();
                 continue;
             }
+			if ("average".equalsIgnoreCase(command)) {
+                average();
+                continue;
+            }
 		}
+	}
+
+	private void average() {
+		hhControlAverage.Average();
+		
 	}
 
 	private void sum() {
@@ -105,13 +123,13 @@ public class HHMenu {
 		out.flush();
 		out.println("[PRINT] in tất cả hàng hóa");
 		out.flush();
-		out.println("[QUIT] thoát khỏi phần mềm");
+		out.println("[AVERAGE] tính trung bình hàng tồn là hàng điện máy");
 		out.flush();
 		out.println("[SEARCH] để tìm kiếm thực phẩm 1 tuần nữa hết hạn");
 		out.flush();
-		out.println("[QUANTITY] tổng số lượng hàng hóa");
+		out.println("[SUM] tổng số lượng hàng hóa");
 		out.flush();
-		out.println("[UPDATE] để cập nhâtS hàng hóa");
+		out.println("[QUIT] thoát khỏi phần mềm");
 		out.flush();
 		out.println("~~~~~~~~Help Menu~~~~~~~~");
 		out.flush();

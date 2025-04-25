@@ -6,9 +6,9 @@ import com.qlhh.ui.HHInAdd;
 import com.qlhh.ui.HHOutAdd;
 
 public class HHControlAdd {
-	HHAddDAO hhAddDAO;
-	HHOutAdd hhOutAdd;
-	HHInAdd hhInAdd;
+	private HHAddDAO hhAddDAO;
+	private HHOutAdd hhOutAdd;
+	private HHInAdd hhInAdd;
 	
 	
 	

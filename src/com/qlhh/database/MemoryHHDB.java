@@ -1,6 +1,7 @@
 package com.qlhh.database;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.qlhh.entity.HangDienMay;
 import com.qlhh.entity.HangHoa;
@@ -41,7 +42,22 @@ public class MemoryHHDB {
 	}
 	
 	
- 	
+ 	public static double getAverageHH(List<HangHoa> danhSach){
+ 		//nhận vào một danh sách các đối tượng HangHoa 
+ 		//và trả về giá trị trung bình kiểu double
+ 		int trungBinhDM = 0;
+ 	    int dem = 0;
+
+ 	    for (HangHoa hh : danhSach) {
+ 	        if (hh instanceof HangDienMay) {
+ 	        	trungBinhDM += hh.getsoLuong();
+ 	            dem++;
+ 	        }
+ 	    }
+
+ 	    if (dem == 0) return 0;
+ 	    return (double) trungBinhDM / dem;
+ 	}
  	
  
 }

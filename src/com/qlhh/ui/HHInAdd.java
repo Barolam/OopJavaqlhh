@@ -33,10 +33,11 @@ public class HHInAdd {
 		out.print("[Ma Hang]: ");
 		out.flush();
 		maHang = in.nextInt();
+		in.nextLine();
 		out.print("[Ten Hang]: ");
 		out.flush();
 		tenHang = in.nextLine();
-		in.nextLine();
+		
 		out.print("[So Luong]: ");
 		out.flush();
 		soLuong = in.nextInt();

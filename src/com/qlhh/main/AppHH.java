@@ -4,14 +4,17 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.qlhh.control.HHControlAdd;
+import com.qlhh.control.HHControlAverage;
 import com.qlhh.control.HHControlPrint;
 import com.qlhh.control.HHControlSum;
 import com.qlhh.database.MemoryHHAddDAO;
+import com.qlhh.database.MemoryHHAverageDAO;
 import com.qlhh.database.MemoryHHPrintDAO;
 import com.qlhh.database.MemoryHHSumDAO;
 import com.qlhh.ui.HHInAdd;
 import com.qlhh.ui.HHMenu;
 import com.qlhh.ui.HHOutAdd;
+import com.qlhh.ui.HHOutAverage;
 import com.qlhh.ui.HHOutPrint;
 import com.qlhh.ui.HHOutSum;
 
@@ -34,7 +37,9 @@ public class AppHH {
  		HHControlSum hhControlQuantity;
         MemoryHHSumDAO hhQuantityDAO;
         HHOutSum hhOutQuantity;
-
+        HHOutAverage hhOutAverage;
+        HHControlAverage hhControlAverage;
+        MemoryHHAverageDAO memoryHHAverageDAO;
  		
  		out =     new PrintWriter(System.out);
  		in =      new Scanner(System.in);
@@ -45,12 +50,14 @@ public class AppHH {
  		hhOutPrint = new HHOutPrint(out);
  		hhQuantityDAO = new MemoryHHSumDAO();
         hhOutQuantity = new HHOutSum(out);
-
+        memoryHHAverageDAO = new MemoryHHAverageDAO();
+        hhOutAverage = new HHOutAverage(out);
  		
  		hhControlPrint = new HHControlPrint(hhPrintDAO, hhOutPrint);
  		hhControlAdd = new HHControlAdd(hhAddDAO, hhOutAdd, hhInAdd);
  		hhControlQuantity = new HHControlSum(hhQuantityDAO, hhOutQuantity);
- 		hhmenu = new HHMenu(out, in, prompt, hhControlAdd);
+ 		hhControlAverage = new HHControlAverage(memoryHHAverageDAO, hhOutAverage);
+ 		hhmenu = new HHMenu(in, out, prompt, hhInAdd, hhControlPrint, hhControlAdd, hhControlQuantity, hhControlAverage);
  		hhmenu.setHHControlPrint(hhControlPrint);
  		hhmenu.setHHControlQuantity(hhControlQuantity);
  		
